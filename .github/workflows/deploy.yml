@@ -1,0 +1,41 @@
+name: Deploy Portfolio to AWS S3
+
+on:
+  push:
+    branches:
+      - main # Triggers the pipeline when you push to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Grab the code from your GitHub repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Set up the Node environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install the project dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Build the Tailwind and React code into the 'dist' folder
+      - name: Build Project
+        run: npm run build
+
+      # 5. Connect to your AWS Account using your hidden secrets
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-2 # The region your S3 bucket is in
+
+      # 6. Push the built files to your S3 bucket
+      - name: Deploy to S3
+        run: aws s3 sync dist/ s3://aniket-portfolio-2026 --delete
