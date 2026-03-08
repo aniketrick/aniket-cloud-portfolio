@@ -1,16 +1,34 @@
-# React + Vite
+# ☁️ Cloud-Native Interactive Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and highly animated personal portfolio application designed to showcase software engineering projects, professional experience, and technical skills. 
 
-Currently, two official plugins are available:
+Built with **React (Vite)** and **Tailwind CSS v4**, this project goes beyond a standard frontend application by utilizing a **Serverless AWS Architecture** for high availability, secure global delivery, and automated CI/CD deployments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+[View Live Site](https://d2nc3vmmsmqdbq.cloudfront.net/)
 
-## React Compiler
+## 🏗️ Architecture & Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend Engineering
+* **Framework:** React.js initialized via Vite for ultra-fast Hot Module Replacement (HMR) and optimized production builds.
+* **Styling:** Tailwind CSS (v4) utilizing PostCSS. Features custom utility classes for Glassmorphism UI, advanced scrollbar styling, and neon text glowing effects.
+* **Animations:** Framer Motion for smooth, hardware-accelerated scroll reveals and hover states.
 
-## Expanding the ESLint configuration
+### Cloud Infrastructure & DevOps
+* **Hosting:** Amazon S3 (Static Website Hosting) configured with custom IAM Bucket Policies for secure, read-only public access.
+* **CDN & Security:** AWS CloudFront deployed to serve the application globally from edge locations, ensuring sub-second load times and enforcing strict HTTPS/SSL security.
+* **CI/CD Pipeline:** "Zero-touch" automated deployment pipeline utilizing **GitHub Actions**. Code merges to the `main` branch automatically trigger secure environment builds and sync optimized assets to AWS S3.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+* **Zero-Touch Deployments:** Fully automated Git-to-AWS pipeline eliminating manual build overhead.
+* **Dark-Mode Optimized UI:** Deep slate aesthetic with indigo and emerald gradient accents.
+* **Interactive Project Grid:** Hover-responsive project cards detailing tech stacks, descriptions, and direct code/live links.
+* **Performance Focused:** Minimal bundle sizing achieved through Vite's Rollup configuration and global edge-caching via CloudFront.
+
+## 🛠️ Local Setup & Development
+
+To run this project locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/aniketrick/aniket-cloud-portfolio.git](https://github.com/aniketrick/aniket-cloud-portfolio.git)
