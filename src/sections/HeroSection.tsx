@@ -22,7 +22,7 @@ export default function HeroSection() {
       <FadeIn delay={0} y={-16} duration={0.7}>
         <nav className="navbar" aria-label="Primary navigation">
           <a href="#home" className="brand" aria-label="Aniket Chakraborty home">
-            <span>AC</span>
+            <span>Aniket Chakraborty</span>
           </a>
           <div className="nav-links">
             {navLinks.map((link) => (
